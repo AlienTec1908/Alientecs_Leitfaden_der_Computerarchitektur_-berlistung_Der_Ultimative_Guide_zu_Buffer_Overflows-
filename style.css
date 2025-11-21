@@ -1,0 +1,233 @@
+﻿/* Grundlegende Stile und Typografie */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Layout für den Druck und Bildschirm */
+.title-page, main {
+    width: 210mm;
+    margin: 0 auto;
+    padding: 2cm;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #1a237e; /* Dunkelblau */
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 3.5em;
+    text-align: center;
+    border-bottom: none;
+    color: #000;
+}
+
+h2 {
+    font-size: 2.5em;
+    border-bottom: 3px solid #3f51b5; /* Indigoblau */
+    padding-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: #303f9f; /* Etwas helleres Blau */
+    border-bottom: 1px dotted #7986cb;
+    padding-bottom: 10px;
+}
+
+h4 {
+    font-size: 1.4em;
+    color: #3f51b5;
+    font-style: italic;
+}
+
+h5 {
+    font-size: 1.2em;
+    color: #5c6bc0;
+    font-weight: 700;
+}
+
+p, li {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+strong {
+    font-weight: 700;
+    color: #c51162; /* Pink als Akzent */
+}
+
+/* Titelseite */
+.title-page {
+    height: 297mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    page-break-after: always;
+}
+
+.title-page .subtitle {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #666;
+    margin: 25px 0 50px 0;
+    max-width: 75%;
+}
+
+.title-page .author, .title-page .date {
+    font-size: 1.3em;
+    color: #444;
+}
+
+/* Terminal-Simulation */
+.terminal {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    font-family: 'Roboto Mono', monospace;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 8px solid #f9a825; /* Gelber Akzent */
+    margin: 30px 0;
+    font-size: 1.1em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.terminal pre {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Code-Editor-Simulation */
+.code-editor {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    font-family: 'Roboto Mono', monospace;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0;
+    font-size: 1.1em;
+    border-left: 8px solid #29b6f6; /* Heller Blauer Akzent */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.code-editor pre {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #37474f;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Diagramme und Tabellen */
+.diagram {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.diagram pre {
+    background-color: #e8eaf6;
+    color: #1a237e;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-align: left;
+    white-space: pre;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #3f51b5;
+    color: white;
+    font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+ul, ol {
+    padding-left: 30px;
+}
+
+/* Seitenumbrüche für PDF */
+section {
+    page-break-before: always;
+}
+
+main > section:first-of-type {
+    page-break-before: auto;
+}
+
+/* Druckstile */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    .title-page, main {
+        width: auto;
+        margin: 0;
+        padding: 1.5cm;
+    }
+    h1, h2, h3, h4, h5 {
+        color: #000;
+        border-bottom-color: #000;
+    }
+    .terminal {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+    .code-editor {
+        background-color: #f5f5f5 !important;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+    .code-editor pre {
+        color: #000 !important;
+    }
+    .diagram {
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+    }
+    th {
+        background-color: #e0e0e0;
+        color: #000;
+    }
+}
