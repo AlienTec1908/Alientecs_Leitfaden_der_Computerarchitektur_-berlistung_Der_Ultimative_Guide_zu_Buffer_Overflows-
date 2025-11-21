@@ -6,7 +6,7 @@
 
 ---
 
-![Der Ultimative Guide zu Buffer Overflows](guide_visual.png)
+![Der Ultimative Guide zu Buffer Overflows](buffer-over.png)
 
 ---
 
